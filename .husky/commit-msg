@@ -1,0 +1,40 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# 获取提交记录
+commit_msg=`cat $1`
+
+# 建议 type，不强制
+# feat: 新功能
+# fix: 修改 bug
+# perf: 性能优化，功能不变
+# refactor: 重构，功能不变
+# docs: 文档
+# style: 代码格式
+# test: 测试用例
+# build: 影响项目构建或依赖项修改
+# revert: 恢复上一次提交
+# ci: 集成发布工具
+# release: 发布新版本
+# chore: 其他修改
+msg_rule="^.{1,30}(\(.{1,30}\))?: .{1,100}"
+
+# 如果 type 是 feat | fix，要加 scope
+feat_fix_msg_rule="^(feat|fix)"
+feat_fix_scope_msg_rule="^(feat|fix)(\(.{1,30}\)):"
+
+if [[ ! $commit_msg =~ $msg_rule ]]
+then
+    echo "commit message 不符合规范。规范参考：https://rokid.yuque.com/pv7hwc/elic1y/wcnlvd#Y1dTh"
+    # 异常退出
+    exit 1
+fi
+  if [[ $commit_msg =~ $feat_fix_msg_rule ]]
+  then
+    if [[ ! $commit_msg =~ $feat_fix_scope_msg_rule ]]
+      then
+        echo "feat 和 fix 需要添加 scope 信息。规范参考：https://rokid.yuque.com/pv7hwc/elic1y/wcnlvd#Y1dTh"
+        # 异常退出
+        exit 1
+      fi
+  fi

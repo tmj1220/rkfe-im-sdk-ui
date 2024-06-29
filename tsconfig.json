@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "allowJs": true,
+    "declaration": true,
+    "module": "ESNext",
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/**/*",
+    "example/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

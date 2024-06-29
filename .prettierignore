@@ -1,0 +1,8 @@
+# prettierignore 以 .gitignore 和 .eslintignore 为基础扩展
+
+.prettierrc.json
+node_modules/
+.idea/
+yarn.lock
+package.json
+.eslintrc.js

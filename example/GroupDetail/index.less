@@ -1,0 +1,125 @@
+.container {
+  padding: 10px;
+
+  .info {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .name {
+      font-size: 14px;
+      color: #333;
+      margin-left: 16px;
+    }
+
+    .editIcon {
+      font-size: 16px;
+      color: #ccc;
+      cursor: pointer;
+      margin-left: 16px;
+    }
+  }
+
+  .configArea {
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        color: #333;
+        font-size: 20px;
+      }
+
+      .editConfigIcon {
+        font-size: 24px;
+        color: #ccc;
+        cursor: pointer;
+      }
+    }
+
+    .content {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #999;
+    }
+  }
+
+  .btnArea {
+    width: 100%;
+  }
+
+  .userArea {
+    width: 100%;
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        color: #333;
+        font-size: 20px;
+      }
+
+      .addUserIcon {
+        font-size: 24px;
+        color: #ccc;
+        cursor: pointer;
+      }
+    }
+
+    .useList {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .item {
+        width: 50px;
+        margin-right: 14px;
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+
+        .avatar {
+          width: 46px;
+          height: 46px;
+          object-fit: cover;
+          border-radius: 4px;
+        }
+
+        .name {
+          width: 100%;
+          margin-top: 6px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 12px;
+        }
+
+        .deleteIcon {
+          font-size: 18px;
+          position: absolute;
+          top: -6px;
+          right: -6px;
+          cursor: pointer;
+          color: #ccc;
+        }
+      }
+    }
+  }
+}
